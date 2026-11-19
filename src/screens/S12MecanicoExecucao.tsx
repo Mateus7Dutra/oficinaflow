@@ -182,18 +182,18 @@ export const S12MecanicoExecucao: React.FC = () => {
             {os.parts.map((p) => (
               <label
                 key={p.id}
-                className="flex items-center justify-between p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-xs"
+                className="flex items-center justify-between gap-3 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer text-xs"
               >
-                <span className="flex items-center gap-2.5">
+                <span className="flex items-center gap-2.5 min-w-0 flex-1">
                   <input
                     type="checkbox"
                     checked={!!p.applied}
                     onChange={() => togglePartApplied(p.id)}
-                    className="rounded border-slate-300 text-[#0F2942]"
+                    className="rounded border-slate-300 text-[#0F2942] shrink-0"
                   />
-                  <span className="font-medium text-slate-800">{p.name}</span>
+                  <span className="font-medium text-slate-800 truncate">{p.name}</span>
                 </span>
-                <span className="font-mono text-[11px] text-slate-500">{p.code}</span>
+                <span className="font-mono text-[11px] text-slate-500 shrink-0">{p.code}</span>
               </label>
             ))}
           </div>

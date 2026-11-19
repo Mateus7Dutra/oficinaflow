@@ -10,6 +10,7 @@ import type {
 
 // Miniaturas SVG embutidas para funcionar 100% offline no PWA
 function makePhotoSvg(title: string, subtitle: string, accent = '#F59E0B'): string {
+  const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="320" height="200" viewBox="0 0 320 200">
     <defs>
       <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
@@ -22,8 +23,8 @@ function makePhotoSvg(title: string, subtitle: string, accent = '#F59E0B'): stri
     <circle cx="160" cy="78" r="28" fill="${accent}" opacity="0.18"/>
     <path d="M148 86l8-10 6 7 10-13 12 16h-36z" fill="${accent}"/>
     <circle cx="152" cy="70" r="4" fill="${accent}"/>
-    <text x="160" y="132" text-anchor="middle" fill="#FFFFFF" font-family="Inter,sans-serif" font-size="14" font-weight="600">${title}</text>
-    <text x="160" y="154" text-anchor="middle" fill="#94A3B8" font-family="Inter,sans-serif" font-size="11">${subtitle}</text>
+    <text x="160" y="132" text-anchor="middle" fill="#FFFFFF" font-family="Inter,sans-serif" font-size="14" font-weight="600">${esc(title)}</text>
+    <text x="160" y="154" text-anchor="middle" fill="#94A3B8" font-family="Inter,sans-serif" font-size="11">${esc(subtitle)}</text>
   </svg>`;
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 }

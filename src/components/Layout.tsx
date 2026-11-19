@@ -226,9 +226,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             <div className="text-xs font-medium text-white truncate">
               {os.vehicleModel} · {os.plate}
             </div>
-            <div className="inline-flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-md bg-white/10 text-slate-100 w-full">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#F59E0B] shrink-0" />
-              <span className="truncate">{stateMeta.label}</span>
+            <div className="inline-flex items-start gap-1.5 text-[11px] leading-snug px-2 py-1.5 rounded-md bg-white/10 text-slate-100 w-full">
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#F59E0B] shrink-0 mt-0.5" />
+              <span>{stateMeta.label}</span>
             </div>
             <button
               onClick={() => {

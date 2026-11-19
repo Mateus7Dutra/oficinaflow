@@ -351,7 +351,7 @@ export const S04AtendenteCheckin: React.FC = () => {
                 {os.inspection.damages.map((d) => (
                   <div
                     key={d.id}
-                    className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-[#F4F7FA]/50"
+                    className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-[#F4F7FA]/50 overflow-hidden"
                   >
                     <span className="w-7 h-7 rounded-full bg-[#DC2626] text-white text-xs font-bold flex items-center justify-center shrink-0">
                       {d.number}
@@ -359,12 +359,14 @@ export const S04AtendenteCheckin: React.FC = () => {
                     <img
                       src={d.photoDataUrl}
                       alt={d.location}
-                      className="w-20 h-14 object-cover rounded-lg border border-slate-200 shrink-0"
+                      className="w-16 sm:w-20 h-14 object-cover rounded-lg border border-slate-200 shrink-0"
                     />
                     <div className="flex-1 min-w-0">
-                      <div className="text-xs font-bold text-slate-800">{d.location}</div>
+                      <div className="text-xs font-bold text-slate-800 truncate">{d.location}</div>
                       <div className="text-xs text-slate-600 truncate">{d.description}</div>
-                      <div className="text-[11px] text-slate-400 font-mono mt-0.5">{d.photoName}</div>
+                      <div className="text-[11px] text-slate-400 font-mono mt-0.5 truncate">
+                        {d.photoName}
+                      </div>
                     </div>
                     <button
                       type="button"

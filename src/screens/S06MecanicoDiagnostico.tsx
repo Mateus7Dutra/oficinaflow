@@ -268,29 +268,29 @@ export const S06MecanicoDiagnostico: React.FC = () => {
               </table>
             </div>
 
-            <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
+            <div className="grid grid-cols-1 sm:grid-cols-12 gap-2 pt-2 border-t border-slate-100">
               <input
                 placeholder="Nome da peça..."
                 value={newPartName}
                 onChange={(e) => setNewPartName(e.target.value)}
-                className="flex-1 min-w-[160px] px-3 py-1.5 text-xs border border-slate-300 rounded-lg"
+                className="sm:col-span-5 px-3 py-1.5 text-xs border border-slate-300 rounded-lg"
               />
               <input
                 placeholder="Código"
                 value={newPartCode}
                 onChange={(e) => setNewPartCode(e.target.value)}
-                className="w-28 px-2.5 py-1.5 text-xs border border-slate-300 rounded-lg"
+                className="sm:col-span-3 px-2.5 py-1.5 text-xs border border-slate-300 rounded-lg"
               />
               <input
                 type="number"
                 value={newPartPrice}
                 onChange={(e) => setNewPartPrice(Number(e.target.value))}
-                className="w-24 px-2.5 py-1.5 text-xs border border-slate-300 rounded-lg"
+                className="sm:col-span-2 px-2.5 py-1.5 text-xs border border-slate-300 rounded-lg"
               />
               <button
                 type="button"
                 onClick={handleAddPart}
-                className="px-3 py-1.5 rounded-lg bg-[#0F2942] text-white text-xs font-semibold inline-flex items-center gap-1"
+                className="sm:col-span-2 px-3 py-1.5 rounded-lg bg-[#0F2942] text-white text-xs font-semibold inline-flex items-center justify-center gap-1"
               >
                 <Plus className="w-3.5 h-3.5" />
                 Peça
